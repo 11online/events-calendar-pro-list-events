@@ -1,20 +1,22 @@
 <?php
 
 /*
- * Plugin Name: Events Calendar PRO List Events
+ * Plugin Name: The Events Calendar PRO Simple List Events
  * Description: Display Events from Events Calendar Pro in list via a shortcode
  * Version: 1.0
  * Author: 11 Online
  * Author URI: https://11online.us
+ * Plugin URI: https://github.com/11online/events-calendar-pro-simple-list-events
  */
 
 // Add Shortcode
-function si66_events_list_shortcode( $atts ) {
+function ec_simple_events_list_shortcode( $atts ) {
     extract( shortcode_atts( array(
         'cat' => '',
         'start_date' => '',
         'end_date' => '',
         'limit' => 20,
+        'show_date_in_title' => false,
     ), $atts ) );
 
     // Category
@@ -51,15 +53,14 @@ function si66_events_list_shortcode( $atts ) {
         'start_date' => $atts['start_date'],
         'end_date'   => $atts['end_date']
     ));
-    //var_dump($posts);
 
     if($posts) {
         $output = '';
         $output .= '<ul>';
 
         foreach($posts as $post) {
+            var_dump($post);
             setup_postdata( $post );
-            //var_dump($post);
             $event_output = '';
             $event_output .= '<li>';
             $event_output .= '<h4 class="entry-title summary">';
@@ -76,4 +77,4 @@ function si66_events_list_shortcode( $atts ) {
     }
 }
 
-add_shortcode( 'si66_events_list', 'si66_events_list_shortcode' );
+add_shortcode( 'ec_simple_events_list', 'ec_simple_events_list_shortcode' );
