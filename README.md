@@ -18,6 +18,6 @@ The plugin takes 5 possible arguments.
 | (int)    | `$limit`              | how many events to get in the list (defaults to 20)                                |
 
 
-This has been tested with The Events Caledar PRO v4.4.14
+This has been tested with The Events Caledar PRO v4.4.14. It may also work with The Events Calendar since we're not using any functions not available in The Events Calendar, but it hasn't been tested.
 
 
