@@ -10,7 +10,7 @@ Example:
 The plugin takes 5 possible arguments.
 
 | Type     | Parameter             | Description                                                                        |
-|----------|:---------------------:|-----------------------------------------------------------------------------------:|
+|:--------:|-----------------------|------------------------------------------------------------------------------------|
 | (string) | `$cat`                | category of the events to retrieve                                                 |
 | (string) |  `$start_date`        | start date of the date range you want to list                                      |
 | (string) | `$end_date`           | end date of the range you want to list                                             |
