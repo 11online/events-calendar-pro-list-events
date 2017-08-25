@@ -59,12 +59,15 @@ function ec_simple_events_list_shortcode( $atts ) {
         $output .= '<ul>';
 
         foreach($posts as $post) {
-            var_dump($post);
             setup_postdata( $post );
             $event_output = '';
             $event_output .= '<li>';
             $event_output .= '<h4 class="entry-title summary">';
+            if($show_date_in_title) {
+            $event_output .= '<a href="' . tribe_get_event_link($post) . '">' .  get_the_title($post) . ' - ' . tribe_get_start_date($post, true, 'D M j g:i a', null) . '</a>';
+            } else {
             $event_output .= '<a href="' . tribe_get_event_link($post) . '">' .  get_the_title($post) . '</a>';
+            }
             $event_output .= '</h4>';
             $event_output .= '</li>';
             $output .= $event_output;
